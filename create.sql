@@ -49,5 +49,7 @@ CREATE TABLE cust_order
     id bigserial,
     cust_id integer NOT NULL,
     order_id integer NOT NULL,
-    PRIMARY KEY (id)
+    PRIMARY KEY (id),
+	FOREIGN KEY (cust_id) REFERENCES customer (id),
+    FOREIGN KEY (order_id) REFERENCES orders (id)
 );
